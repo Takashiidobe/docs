@@ -1,0 +1,5 @@
+#!/usr/bin/env bash 
+
+for f in $(find ./html/ -name '*.html'); do
+    sed -i 's/.md/.html/g' $f; 
+done

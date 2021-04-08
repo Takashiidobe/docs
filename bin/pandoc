@@ -1,0 +1,10 @@
+#!/usr/bin/env bash 
+shopt -s globstar
+
+for f in $(ls ./html/**/*.md); do
+    pandoc $f -o "$f.html" --template=template.html
+done
+
+for f in $(ls ./html/**/*.md.html); do
+    mv -- "$f" "${f%.md.html}.html"
+done
